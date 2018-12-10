@@ -1,0 +1,257 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\durge\DatingApp> git init
+Initialized empty Git repository in C:/Users/durge/DatingApp/.git/
+PS C:\Users\durge\DatingApp> git remote add origin https://github.com/durgeshc10/DatingApp.git
+PS C:\Users\durge\DatingApp> git initInitialized empty Git repository in C:/Users/durge/DatingApp/.git/
+PS C:\Users\durge\DatingApp> git remote add origin https://github.com/durgeshc10/DatingApp.git
+PS C:\Users\durge\DatingApp> git -help
+unknown option: -help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+PS C:\Users\durge\DatingApp> git pull help
+fatal: 'help' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\durge\DatingApp> git pull -help
+usage: git pull [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    --recurse-submodules[=<on-demand>]
+                          control for recursive fetching of submodules
+
+Options related to merging
+    -r, --rebase[=<false|true|preserve|interactive>]
+                          incorporate changes by rebasing rather than merging
+    -n                    do not show a diffstat at the end of the merge
+    --stat                show a diffstat at the end of the merge
+    --log[=<n>]           add (at most <n>) entries from shortlog to
+merge commit message
+    --signoff[=...]       add Signed-off-by:
+    --squash              create a single commit instead of doing a merge
+    --commit              perform a commit if the merge succeeds (default)
+    --edit                edit message before committing
+    --ff                  allow fast-forward
+    --ff-only             abort if fast-forward is not possible
+    --verify-signatures   verify that the named commit has a valid GPG signature
+    --autostash           automatically stash/stash pop before and after rebase
+    -s, --strategy <strategy>
+                          merge strategy to use
+    -X, --strategy-option <option=value>
+                          option for selected merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    --allow-unrelated-histories
+                          allow merging unrelated histories
+
+Options related to fetching
+    --all                 fetch from all remotes
+    -a, --append          append to .git/FETCH_HEAD instead of overwriting    --upload-pack <path>  path to upload pack on remote end
+    -f, --force           force overwrite of local branch
+    -t, --tags            fetch all tags and associated objects
+    -p, --prune           prune remote-tracking branches no longer on remote
+    -j, --jobs[=<n>]      number of submodules pulled in parallel    --dry-run             dry run
+    -k, --keep            keep downloaded pack
+    --depth <depth>       deepen history of shallow clone
+    --unshallow           convert to a complete repository
+    --update-shallow      accept refs that update .git/shallow
+    --refmap <refmap>     specify fetch refmap
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+PS C:\Users\durge\DatingApp>
+
+PS C:\Users\durge\DatingApp> git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+PS C:\Users\durge\DatingApp> git pull https://github.com/durgeshc10/DatingApp.git master
+From https://github.com/durgeshc10/DatingApp
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+PS C:\Users\durge\DatingApp>  git branch --set-upstream-to=origin/<branch> master
+error: the requested upstream branch 'origin/<branch>' does not exist
+hint:
+hint: If you are planning on basing your work on an upstream
+hint: branch that already exists at the remote, you may need to
+hint: run "git fetch" to retrieve it.
+hint:
+hint: If you are planning to push out a new local branch that
+hint: will track its remote counterpart, you may want to use
+hint: "git push -u" to set the upstream config as you push.
+PS C:\Users\durge\DatingApp> git push -u
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+PS C:\Users\durge\DatingApp> git push --set-upstream origin master
+To https://github.com/durgeshc10/DatingApp.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/durgeshc10/DatingApp.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\durge\DatingApp> git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+PS C:\Users\durge\DatingApp> git branch --set-upstream-to=origin/<branch> master
+error: the requested upstream branch 'origin/<branch>' does not exist
+hint:
+hint: If you are planning on basing your work on an upstream
+hint: branch that already exists at the remote, you may need to
+hint: run "git fetch" to retrieve it.
+hint:
+hint: If you are planning to push out a new local branch that
+hint: will track its remote counterpart, you may want to use
+hint: "git push -u" to set the upstream config as you push.
+PS C:\Users\durge\DatingApp> git status -z -u
+PS C:\Users\durge\DatingApp> git rev-parse master
+64952234e0ae90d94371e536fee0043d0978dfb9
+PS C:\Users\durge\DatingApp>  git remote --verbose
+origin  https://github.com/durgeshc10/DatingApp.git (fetch)
+origin  https://github.com/durgeshc10/DatingApp.git (push)
+PS C:\Users\durge\DatingApp> git remote --verbose
+origin  https://github.com/durgeshc10/DatingApp.git (fetch)
+origin  https://github.com/durgeshc10/DatingApp.git (push)
+PS C:\Users\durge\DatingApp> > git pull --tags -r
+> : The term '>' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that
+the path is correct and try again.
+At line:1 char:1
++ > git pull --tags -r
++ ~
+    + CategoryInfo          : ObjectNotFound: (>:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\durge\DatingApp> git initInitialized empty Git repository in C:/Users/durge/DatingApp/.git/
+PS C:\Users\durge\DatingApp> git remote add origin https://github.com/durgeshc10/DatingApp.git
+PS C:\Users\durge\DatingApp> git add README.md
+PS C:\Users\durge\DatingApp> git commit -m "first commit"
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\durge\DatingApp> git remote add origin https://github.com/durgeshc10/DatingApp.git
+fatal: remote origin already exists.
+PS C:\Users\durge\DatingApp> git push -u origin master
+Counting objects: 158, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (150/150), done.
+Writing objects: 100% (158/158), 139.14 KiB | 2.53 MiB/s, done.
+Total 158 (delta 31), reused 0 (delta 0)
+remote: Resolving deltas: 100% (31/31), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/durgeshc10/DatingApp/pull/new/master
+remote:
+To https://github.com/durgeshc10/DatingApp.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+PS C:\Users\durge\DatingApp> get branch -u Home
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that
+the path is correct and try again.
+At line:1 char:1
++ get branch -u Home
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\durge\DatingApp> get branch -u origin Home
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that
+the path is correct and try again.
+At line:1 char:1
++ get branch -u origin Home
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\durge\DatingApp> get branch -u origin Home
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that
+the path is correct and try again.
+At line:1 char:1
++ get branch -u origin Home
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\durge\DatingApp> get branch -u origin Office
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that
+the path is correct and try again.
+At line:1 char:1
++ get branch -u origin Office
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\durge\DatingApp> get branch -u master Office
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that
+the path is correct and try again.
+At line:1 char:1
++ get branch -u master Office
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\durge\DatingApp> get branch -u
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that
+the path is correct and try again.
+At line:1 char:1
++ get branch -u
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\durge\DatingApp> git branch -u origin Home
+fatal: branch 'Home' does not exist
+PS C:\Users\durge\DatingApp> git branch -u origin Office
+fatal: branch 'Office' does not exist
+PS C:\Users\durge\DatingApp> git branch -u origin Home
+error: the requested upstream branch 'origin' does not exist
+hint:
+hint: If you are planning on basing your work on an upstream
+hint: branch that already exists at the remote, you may need to
+hint: run "git fetch" to retrieve it.
+hint:
+hint: If you are planning to push out a new local branch that
+hint: will track its remote counterpart, you may want to use
+hint: "git push -u" to set the upstream config as you push.
+PS C:\Users\durge\DatingApp> git fetch
+PS C:\Users\durge\DatingApp> git push -u
+fatal: The current branch Home has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin Home
+
+PS C:\Users\durge\DatingApp> git push --set-upstream origin Home
+Everything up-to-date
+Branch 'Home' set up to track remote branch 'Home' from 'origin'.
+PS C:\Users\durge\DatingApp>
